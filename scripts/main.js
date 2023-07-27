@@ -2,26 +2,60 @@ console.log('Hi!');
 
 //get all the buttons with the document
 let keys = document.querySelectorAll('#calculator span');
+console.log(`keys: ${keys}`);
+console.log(`keys 0: ${keys[0]}`);
 //an array for displaying statements on the display
 let operators = ['+', '-', 'x', '/'];
 let decimalAdded = false;
-//зв'язуємо кнопку '1' зі зьінною єone'
-let one = document.querySelector('.button.one');
 
-//змінн поля для вводу
+//масив для кнопок, спочатку порожній:
+let arrayOfButtons = [];
+
+//зв'язуємо кнопку '1' та '2' з відповідними змінними:
+const one = document.querySelector('.button.one');
+const two = document.querySelector('.button.two');
+
+//додаємо в масив першу та другу кнопки:
+arrayOfButtons.push(one, two);
+
+
+//змінна для дісплею, з'єднуємо з відповідним елементом у html:
 let inputDisplay = document.querySelector('#display');
+//нехай початкове значення на дісплеї буде '0':
+inputDisplay.value = 0;
 
-//додаємо подію 'onclick' до цієї кнопки та що відбудеться після натискання
+//цикл для надання кожній кнопці події 'onclick'(натискання)
+for (let i = 0; i < arrayOfButtons.length; i++) {
+    arrayOfButtons[i].onclick  = function(event) {
+
+    //надаємо дісплею значення натиснутої кнопки, отримавши її зміст(content)
+    inputDisplay.value = arrayOfButtons[i].textContent;
+    }
+}
+
+/* arrayOfButtons[0].onclick  = function(event) {
+    //надаємо дісплею значення натиснутої кнопки, отримавши її зміст(content)
+    inputDisplay.value = arrayOfButtons[0].textContent;
+    //let contentOfOne = arrayOfButtons[0].textContent;
+    //inputDisplay.value = contentOfOne;
+
+    //inputDisplay.value = one.value;// don't work
+    
+} */
+
+/* //додаємо подію 'onclick' до цієї кнопки та що відбудеться після натискання
 one.onclick = function(event) {
     //надаємо дісплею значення натиснутої кнопки
     inputDisplay.value = 1;
-    //inputDisplay.value = one.value;
-    console.log(`inputDisplay.value = ${inputDisplay.value}`);// на дисплеї з'явилась цифра '1'
-}
+    //inputDisplay.value = one.value;// don't work
+    
+} */
+
 
 //add  'onclick' event for all buttons and perform the action
 for (let i = 0; i < keys.length; i++) {
     keys[i].onclick = function(e) {
+        console.log(`keys[i]: ${keys[i]}`);
         //get input and value of button
         let input = document.querySelector('#display');
         let inputVal = input.innerHTML;
@@ -76,4 +110,3 @@ for (let i = 0; i < keys.length; i++) {
         e.preventDefault();
     }
 }
-//console.log(keys);
