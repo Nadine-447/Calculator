@@ -38,6 +38,7 @@
     cursor: pointer;
     border-radius: 3px;
     font-size: 18px;
+    /* Transitions enable you to define the transition between two states of an element. Different states may be defined using pseudo-classes like :hover*/
     transition: background-color 0.3s ease;
 }
 
@@ -47,10 +48,10 @@
 }
 
 /* additional styling for the equals button */
-.equals{
+.button.equals{
     background-color: #1ab51f;
 }
 
-.equals:hover{
+.button.equals:hover{
     background-color: #16911a;
 }
