@@ -38,6 +38,8 @@
     cursor: pointer;
     border-radius: 3px;
     font-size: 18px;
+    /* change the font weight: */
+    font-weight: 600;
     /* Transitions enable you to define the transition between two states of an element. Different states may be defined using pseudo-classes like :hover*/
     transition: background-color 0.3s ease;
 }
@@ -54,4 +56,13 @@
 
 .button.equals:hover{
     background-color: #16911a;
+}
+
+/* additional styling for the reset button */
+.button.reset{
+    background-color: #f05050;
+}
+
+.button.reset:hover{
+    background-color: #d73636;
 }

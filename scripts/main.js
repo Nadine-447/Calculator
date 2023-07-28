@@ -11,12 +11,25 @@ let decimalAdded = false;
 //масив для кнопок, спочатку порожній:
 let arrayOfButtons = [];
 
-//зв'язуємо кнопку '1' та '2' з відповідними змінними:
+// associate the buttons with the corresponding variables (зв'язуємо кнопки '1', '2',...'0' з відповідними змінними):
 const one = document.querySelector('.button.one');
 const two = document.querySelector('.button.two');
+const three = document.querySelector('.button.three');
+const four = document.querySelector('.button.four');
+const five = document.querySelector('.button.five');
+const six = document.querySelector('.button.six');
+const seven = document.querySelector('.button.seven');
+const eight = document.querySelector('.button.eight');
+const nine = document.querySelector('.button.nine');
+const zero = document.querySelector('.button.zero');
+const division = document.querySelector('.button.division');
+const multiplication = document.querySelector('.button.multiplication');
+const minus = document.querySelector('.button.minus');
+const plus = document.querySelector('.button.plus');
 
-//додаємо в масив першу та другу кнопки:
-arrayOfButtons.push(one, two);
+
+// add to the array our buttons (додаємо в масив наші кнопки):
+arrayOfButtons.push(one, two, three, four, five, six, seven, eight, nine, zero, division, multiplication, minus, plus);
 
 
 //змінна для дісплею, з'єднуємо з відповідним елементом у html:
